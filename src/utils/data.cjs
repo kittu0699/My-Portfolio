@@ -108,7 +108,7 @@ export const PROJECTS = [
     id: 2,
     title: "Weather App",
     description:
-      "Build a Weather App using React JS. Here we will get the current Weather data from OpenWeatherMap API and display the weather data like Temperature,  Weather condition, Humidity and Wind Speed according to the city.",
+      "Developed a Weather App using React JS. Here we will get the current Weather data from OpenWeatherMap API and display the weather data like Temperature,  Weather condition, Humidity and Wind Speed according to the city.",
     image: PROJECT_IMG_2,
     tags: ["React", "CSS", "Open Source API"],
     liveUrl: "#",

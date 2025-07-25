@@ -29,7 +29,8 @@ const Navbar = () => {
                     className='flex items-center space-x-2'
                 >
                     <Code2 size={24} className="text-blue-500" />{""}
-                    <span className="text-lg ml-1">Time to Program</span>
+                    {/* <span className="text-lg ml-1" >Time to Program</span>  */}
+                    <span className={`${isDarkMode ? "text-white" : "text-gray-900"} text-lg ml-1`} >Time to Program</span>
                 </motion.div>
 
                 {/* Desktop Navigation */}

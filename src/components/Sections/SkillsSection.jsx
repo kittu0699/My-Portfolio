@@ -191,7 +191,8 @@ const SkillsSection = () => {
             animate={isInView ? "visible" : "hidden"}
             variants={containerVariants}
             className='mt-20 grid grid-cols-2 md:grid-cols-3 uppercase'
-            >
+            >  {/* yaha pe change kiye hai gap hata diye hai  */}
+            
               {STATS.map((stat, index) => (
                 <motion.div
                   key={stat.label}
