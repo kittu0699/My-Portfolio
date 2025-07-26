@@ -30,7 +30,7 @@ const Navbar = () => {
                 >
                     <Code2 size={24} className="text-blue-500" />{""}
                     {/* <span className="text-lg ml-1" >Time to Program</span>  */}
-                    <span className={`${isDarkMode ? "text-white" : "text-gray-900"} text-lg ml-1`} >Time to Program</span>
+                    <span className={`${isDarkMode ? "text-white" : "text-gray-900"} text-lg ml-1 uppercase`} >Kishan Mishra</span>
                 </motion.div>
 
                 {/* Desktop Navigation */}
