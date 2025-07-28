@@ -100,7 +100,7 @@ export const PROJECTS = [
       "Tailwind CSS",
     ],
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/kittu0699/Expense-Management-System",
     featured: false,
     category: "Full Stack",
   },
@@ -112,7 +112,7 @@ export const PROJECTS = [
     image: PROJECT_IMG_2,
     tags: ["React", "CSS", "Open Source API"],
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/kittu0699/weather-app",
     featured: true,
     category: "Web Application",
   },
@@ -124,7 +124,7 @@ export const PROJECTS = [
     image: PROJECT_IMG_3,
     tags: ["React", "CSS", "Node.js", "Express.js", "MySQL"],
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/kittu0699/Login-Form",
     featured: true,
     category: "Web Application",
   },
@@ -136,7 +136,7 @@ export const PROJECTS = [
     image: PROJECT_IMG_4,
     tags: ["React", "CSS"],
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/kittu0699/TO-DO-LIST",
     featured: true,
     category: "Web Application",
   },
@@ -181,7 +181,7 @@ export const PASSIONS = [
   },
 ];
 
-export const SOCIAL_LINK = [
+export const SOCIAL_LINKS = [
   {
     name: "GitHub",
     icon: FiGithub,
