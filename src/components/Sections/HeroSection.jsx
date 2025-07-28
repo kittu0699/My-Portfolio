@@ -186,9 +186,9 @@ const HeroSection = () => {
                 className='flex justify-center space-x-6 mb-8'
               >
                 {[
-                  { icon: FiGithub, href: "#" },
-                  { icon: FiLinkedin, href: "#" },
-                  { icon: Mail, href: "#" },
+                  { icon: FiGithub, href: "https://github.com/kittu0699" },
+                  { icon: FiLinkedin, href: "https://www.linkedin.com/in/kishan-mishra-9a2940334/" },
+                  { icon: Mail, href: "mailto:kishanmishra0607@gmail.com" },
                 ].map((social, index) => (
                   <motion.a
                     key={index}
@@ -327,9 +327,9 @@ const HeroSection = () => {
                 className='flex space-x-6 mb-12'
               >
                 {[
-                  { icon: FiGithub, href: "#" },
-                  { icon: FiLinkedin, href: "#" },
-                  { icon: Mail, href: "#" },
+                  { icon: FiGithub, href: "https://github.com/kittu0699" },
+                  { icon: FiLinkedin, href: "https://www.linkedin.com/in/kishan-mishra-9a2940334/" },
+                  { icon: Mail, href: "mailto:kishanmishra0607@gmail.com" },
                 ].map((social, index) => (
                   <motion.a
                     key={index}
