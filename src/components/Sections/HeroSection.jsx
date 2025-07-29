@@ -5,7 +5,7 @@ import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { useTheme } from '../../context/ThemeContext';
 
 import PROFILE_PIC from "../../assets/images/img.jpg";
-import { containerVariants, itemVariants } from '../../utils/helper.cjs'; 
+import { containerVariants, itemVariants } from '../../utils/helper.cjs';
 
 const HeroSection = () => {
   const { isDarkMode } = useTheme();
@@ -183,7 +183,7 @@ const HeroSection = () => {
               {/* Social Links - Mobile  */}
               <motion.div
                 variants={itemVariants}
-                className='flex justify-center space-x-6 mb-8'
+                className='flex justify-center space-x-6 mb-8 '
               >
                 {[
                   { icon: FiGithub, href: "https://github.com/kittu0699" },
@@ -193,6 +193,8 @@ const HeroSection = () => {
                   <motion.a
                     key={index}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ y: -3, scale: 1.1 }}
                     className={`p-3 rounded-full transition-colors ${isDarkMode
                       ? "text-gray-400 hover:text-white hover:bg-gray-800"
@@ -221,7 +223,7 @@ const HeroSection = () => {
                   className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
                   Node.js
                 </span>
-                 <span
+                <span
                   className={isDarkMode ? "text-gray-700" : "text-gray-400"}>
                   .
                 </span>
@@ -334,6 +336,8 @@ const HeroSection = () => {
                   <motion.a
                     key={index}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ y: -3, scale: 1.1 }}
                     className={`p-3 rounded-full transition-colors ${isDarkMode
                       ? "text-gray-400 hover:text-white hover:bg-gray-800"
@@ -379,7 +383,7 @@ const HeroSection = () => {
                     className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
                     Express.js
                   </span>
-                   <span
+                  <span
                     className={isDarkMode ? "text-gray-700" : "text-gray-400"}>
                     .
                   </span>
@@ -419,15 +423,15 @@ const HeroSection = () => {
                   }}
                   className='absolute -inset-4 rounded-3xl border border-blue-500/20'
                 >
-                <motion.div
-                  animate={{ rotate: -360 }}
-                  transition={{
-                    duration: 30,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                  className='absolute -inset-8 rounded-3xl border border-purple-500/10'
-                ></motion.div>
+                  <motion.div
+                    animate={{ rotate: -360 }}
+                    transition={{
+                      duration: 30,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                    className='absolute -inset-8 rounded-3xl border border-purple-500/10'
+                  ></motion.div>
                 </motion.div>
               </div>
             </motion.div>

@@ -102,7 +102,7 @@ export const PROJECTS = [
     liveUrl: "#",
     githubUrl: "https://github.com/kittu0699/Expense-Management-System",
     featured: false,
-    category: "Full Stack",
+    category: "Web Application",
   },
   {
     id: 2,
