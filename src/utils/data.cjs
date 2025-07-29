@@ -157,7 +157,7 @@ export const JOURNEY_STEPS = [
     title: "First Internship",
     company: "Rays Edutech PVT Ltd.",
     description:
-      "Joined as a frontend intern, working with React and learning modern development practices.",
+      "Joined as a Full Stack Web Intern, working with React.js, Express.js, Node.js, MongoDB, MySQL and learning modern development practices.",
     icon: Briefcase,
     color: "bg-green-500",
   },
