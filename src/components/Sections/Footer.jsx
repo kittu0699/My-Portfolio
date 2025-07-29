@@ -216,11 +216,7 @@ const Footer = () => {
                             variants={itemVariants}
                             className='space-y-2'
                         >
-                            <p
-                                className={`text-sm ${isDarkMode ? "text-gray-500" : "text-gray-600"
-                                    }`}>
-                                © {new Date().getFullYear()} Time To Program. All rights reserved.
-                            </p>
+                            
                             <p
                                 className={`text-sm ${isDarkMode
                                         ? "text-gray-600" : "text-gray-500"

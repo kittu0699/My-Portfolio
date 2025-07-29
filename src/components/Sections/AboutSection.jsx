@@ -4,7 +4,7 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useTheme } from '../../context/ThemeContext';
 import { JOURNEY_STEPS, PASSIONS } from '../../utils/data.cjs';
 
-import SIGNATURE from "../../assets/images/sign.svg"
+import SIGNATURE from "../../assets/images/sign1.svg"
 import { containerVariants, itemVariants } from '../../utils/helper.cjs';
 
 const AboutSection = () => {
@@ -170,9 +170,9 @@ const AboutSection = () => {
                             </div>
                             {/* DigitalSignature  */}
                             <div className="flex justify-center">
-                                <img src={SIGNATURE} alt="Kishan Mishra" className='w-52' />
+                                <img src={SIGNATURE} alt="Kishan Mishra" className='w-50' />
                             </div>
-                            <div className="text-lg font-medium text-blue-500 mt-2">
+                            <div className="text-lg font-medium text-blue-500 mt-2 uppercase">
                                 Kishan Mishra
                             </div>
                         </motion.div>
