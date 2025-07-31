@@ -90,8 +90,8 @@ const Footer = () => {
         <footer
             ref={footerRef}
             className={`relative ${isDarkMode
-                ? "bg-gray-900 text-white"
-                : "bg-white text-gray-900"
+                ? "bg-gray-950 text-white"
+                : "bg-gray-50 text-gray-900"
                 } overflow-hidden`}
         >
             {/* Animated Wave/Gradient Line  */}
@@ -231,7 +231,7 @@ const Footer = () => {
                         >
                             <motion.button
                                 onClick={ScrollToTop}
-                                className={`inline-flex items-center space-x-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${isDarkMode
+                                className={`inline-flex items-center space-x-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${isDarkMode
                                         ? "bg-gray-800/50 hover:bg-gray-700/50 text-gray-400 hover:text-white"
                                         : "bg-gray-100/50 hover:bg-gray-200/50 text-gray-600 hover:text-gray-900"
                                     } backdrop-blur-sm border ${

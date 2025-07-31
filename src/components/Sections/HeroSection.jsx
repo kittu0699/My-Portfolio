@@ -1,11 +1,10 @@
-import React from 'react';
+import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowDown, Mail } from 'lucide-react';
-import { FiGithub, FiLinkedin } from 'react-icons/fi';
-import { useTheme } from '../../context/ThemeContext';
+import { ArrowDown, Mail } from "lucide-react";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
+import { useTheme } from "../../context/ThemeContext";
 
-import PROFILE_PIC from "../../assets/images/img.jpg";
-import { containerVariants, itemVariants } from '../../utils/helper.cjs';
+import { containerVariants, itemVariants } from "../../utils/helper.cjs";
 
 const HeroSection = () => {
   const { isDarkMode } = useTheme();
@@ -32,17 +31,16 @@ const HeroSection = () => {
     },
   };
 
-  const imageVariants = {
-    hidden: { x: 50, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-        delay: 0.5,
-      },
-    },
+  const cardColors = {
+    bg: isDarkMode ? "bg-zinc-900" : "bg-white",
+    border: isDarkMode ? "border-zinc-700" : "border-gray-200",
+    text: isDarkMode ? "text-zinc-500" : "text-gray-500",
+    const: isDarkMode ? "text-pink-400" : "text-pink-600",
+    developer: isDarkMode ? "text-blue-400" : "text-blue-600",
+    operator: isDarkMode ? "text-zinc-500" : "text-gray-500",
+    curly: isDarkMode ? "text-orange-400" : "text-orange-500",
+    key: isDarkMode ? "text-purple-400" : "text-purple-600",
+    value: isDarkMode ? "text-green-400" : "text-green-600",
   };
 
   return (
@@ -52,9 +50,9 @@ const HeroSection = () => {
     >
       {/* Hero Section */}
       <motion.section
-        id='home'
+        id="home"
         style={{ y: heroY }}
-        className='min-h-screen flex items-center justify-center relative px-6 pt-10'
+        className="min-h-screen flex items-center justify-center relative px-6 pt-10"
       >
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
@@ -65,7 +63,7 @@ const HeroSection = () => {
             transition={{
               duration: 20,
               repeat: Infinity,
-              ease: "linear"
+              ease: "linear",
             }}
             className={`absolute top-20 right-20 w-64 h-64 rounded-full blur-3xl opacity-10 ${isDarkMode ? "bg-blue-500" : "bg-blue-400"
               }`}
@@ -92,36 +90,9 @@ const HeroSection = () => {
               initial="hidden"
               animate="visible"
               variants={containerVariants}
-              className='text-center'
+              className="text-center"
             >
-              {/* Profile Image - Mobile  */}
-              <motion.din variants={imageVariants} className="mb-8">
-                <div className="w-32 h-32 mx-auto relative">
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    className={`w-full h-32 rounded-2xl overflow-hidden border-4 ${isDarkMode ? "bg-gray-800" : "border-gray-300"
-                      } shadow-2xl`}
-                  >
-                    <img
-                      src={PROFILE_PIC}
-                      alt='Profile'
-                      className='w-full h-full object-cover'
-                    />
-                  </motion.div>
-                  {/* Decorative Ring  */}
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{
-                      duration: 20,
-                      repeat: Infinity,
-                      ease: "linear",
-                    }}
-                    className='absolute -inset-2 rounded-2xl border border-blue-500/20'
-                  />
-                </div>
-              </motion.din>
-
-              {/* Content - Mobile  */}
+              {/* Content - Mobile */}
               <motion.div
                 variants={textVariants}
                 className={`text-sm uppercase tracking-widest ${isDarkMode ? "text-gray-500" : "text-gray-600"
@@ -132,10 +103,11 @@ const HeroSection = () => {
 
               <motion.h1
                 variants={itemVariants}
-                className='text-3xl md:text-5xl font-light mb-6 leading-tight'
+                className="text-3xl md:text-5xl font-light mb-6 leading-tight"
               >
                 <span
-                  className={`${isDarkMode ? "text-white" : "text-gray-900"}`} >
+                  className={`${isDarkMode ? "text-white" : "text-gray-900"}`}
+                >
                   Building digital
                 </span>
                 <span className="text-blue-500 font-medium ml-2">
@@ -152,19 +124,20 @@ const HeroSection = () => {
                 className={`text-base md:text-lg ${isDarkMode ? "text-gray-400" : "text-gray-600"
                   } mb-8 max-w-xl mx-auto font-light leading-relaxed`}
               >
-                I craft beautiful, functional web applications with modern technologies and thoughtful user experiences.
+                I craft beautiful, functional web applications with modern
+                technologies and thoughtful user experiences.
               </motion.p>
 
-              {/* CTA Buttons - Mobile  */}
+              {/* CTA Buttons - Mobile */}
               <motion.div
                 variants={itemVariants}
-                className='flex flex-col sm:flex-row gap-4 justify-center items-center mb-8'
+                className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
               >
                 <motion.button
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => scrollToSection("work")}
-                  className='bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300'
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300"
                 >
                   View Work
                 </motion.button>
@@ -173,17 +146,28 @@ const HeroSection = () => {
                   whileTap={{ scale: 0.98 }}
                   onClick={() => scrollToSection("contact")}
                   className={`border ${isDarkMode
-                    ? "border-gray-700 hover:border-gray-600 text-gray-300" : "border-gray-300 hover:border-gray-400 text-gray-700"
+                    ? "border-gray-700 hover:border-gray-600 text-gray-300"
+                    : "border-gray-300 hover:border-gray-400 text-gray-700"
                     } px-8 py-3 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300`}
                 >
                   Get in Touch
                 </motion.button>
+                <motion.a
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300 inline-block text-center"
+                >
+                  VIEW RESUME
+                </motion.a>
               </motion.div>
 
-              {/* Social Links - Mobile  */}
+              {/* Social Links - Mobile */}
               <motion.div
                 variants={itemVariants}
-                className='flex justify-center space-x-6 mb-8 '
+                className="flex justify-center space-x-6 mb-8"
               >
                 {[
                   { icon: FiGithub, href: "https://github.com/kittu0699" },
@@ -206,59 +190,152 @@ const HeroSection = () => {
                 ))}
               </motion.div>
 
-              {/* Tech Stack - Mobile  */}
-              <motion.dev
-                variants={itemVariants}
-                className="flex justify-center items-center space-x-6 text-xs uppercase tracking-widest flex-wrap"
-              >
-                <span
-                  className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
-                  React
-                </span>
-                <span
-                  className={isDarkMode ? "text-gray-700" : "text-gray-400"}>
-                  .
-                </span>
-                <span
-                  className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
-                  Node.js
-                </span>
-                <span
-                  className={isDarkMode ? "text-gray-700" : "text-gray-400"}>
-                  .
-                </span>
-                <span
-                  className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
-                  Express.js
-                </span>
-                <span
-                  className={isDarkMode ? "text-gray-700" : "text-gray-400"}>
-                  .
-                </span>
-                <span
-                  className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
-                  MongoDB
-                </span>
-                <span
-                  className={isDarkMode ? "text-gray-700" : "text-gray-400"}>
-                  .
-                </span>
-                <span
-                  className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
-                  MySQL
-                </span>
-              </motion.dev>
+              {/* Developer.js card for mobile */}
+              <div className="font-inter">
+                <motion.div
+                  className="w-full max-w-[95vw] flex justify-center items-center px-4 md:px-6 py-6 md:py-10"
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{
+                    duration: 0.8,
+                    delay: 1.2,
+                    type: "spring",
+                    stiffness: 100,
+                  }}
+                >
+                  <div className="relative">
+                    {/* Animated background gradient */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-br from-blue-400/25 via-blue-900 to-blue-400/10 rounded-2xl"
+                      animate={{ rotate: [0, 6, 0] }}
+                      transition={{
+                        duration: 6,
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                        ease: "easeInOut",
+                      }}
+                    />
+                    {/* Card content */}
+                    <motion.div
+                      className={`relative ${cardColors.bg} border ${cardColors.border} p-4 sm:p-6 rounded-2xl shadow-md`}
+                      whileHover={{
+                        y: -5,
+                        boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.3)",
+                      }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {/* Header */}
+                      <div className="flex justify-between items-center mb-6">
+                        <div className="flex space-x-2">
+                          <motion.div
+                            className="w-3 h-3 rounded-full bg-red-500"
+                            whileHover={{ scale: 1.2 }}
+                          />
+                          <motion.div
+                            className="w-3 h-3 rounded-full bg-yellow-400"
+                            whileHover={{ scale: 1.2 }}
+                          />
+                          <motion.div
+                            className="w-3 h-3 rounded-full bg-green-500"
+                            whileHover={{ scale: 1.2 }}
+                          />
+                        </div>
+                        <div className={`text-xs md:text-sm ${cardColors.text}`}>
+                          developer.js
+                        </div>
+                      </div>
+
+                      {/* Code block */}
+                      <div className="space-y-2 font-mono text-sm md:text-base overflow-x-auto whitespace-nowrap sm:whitespace-normal">
+                        <div className="flex justify-start">
+                        <div className={cardColors.text}>// Software Developer</div>
+                        </div>
+                        <div className="flex justify-start whitespace-pre">
+                          <span className={cardColors.const}>const </span>
+                          <span className={cardColors.developer}>developer </span>
+                          <span className={cardColors.operator}>= </span>
+                          <span className={cardColors.curly}>{"{"}</span>
+                        </div>
+                        <motion.div
+                          className="pl-6 flex justify-start"
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 1.4, duration: 0.3 }}
+                        >
+                          <span className={cardColors.key}>name</span>
+                          <span className={cardColors.operator}>:</span>{" "}
+                          <span className={cardColors.value}>'Kishan Mishra'</span>
+                          <span className={cardColors.operator}>,</span>
+                        </motion.div>
+                        <motion.div
+                          className="pl-6 flex justify-start flex-wrap gap-x-1"
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 1.6, duration: 0.3 }}
+                        >
+                          <span className={cardColors.key}>skills</span>
+                          <span className={cardColors.operator}>:</span>{" "}
+                          <span className={cardColors.curly}>[</span>
+                          <span className={cardColors.value}>'JavaScript'</span>
+                          <span className={cardColors.operator}>,</span>{" "}
+                          <span className={cardColors.value}>'React.js'</span>
+                          <span className={cardColors.operator}>,</span>{" "}
+                          <span className={cardColors.value}>'Node.js'</span>
+                          <span className={cardColors.operator}>,</span>{" "}
+                          <span className={cardColors.value}>'Express.js'</span>
+                          <span className={cardColors.operator}>,</span>{" "}
+                          <span className={cardColors.value}>'MongoDB'</span>
+                          <span className={cardColors.operator}>,</span>{" "}
+                          <span className={cardColors.value}>'MySQL'</span>
+                          <span className={cardColors.curly}>]</span>
+                          <span className={cardColors.operator}>,</span>
+                        </motion.div>
+                        <motion.div
+                          className="pl-6 flex justify-start"
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 1.8, duration: 0.3 }}
+                        >
+                          <span className={cardColors.key}>focuses</span>
+                          <span className={cardColors.operator}>:</span>{" "}
+                          <span className={cardColors.curly}>[</span>
+                          <span className={cardColors.value}>'Full-Stack'</span>
+                          <span className={cardColors.curly}>]</span>
+                          <span className={cardColors.operator}>,</span>
+                        </motion.div>
+                        <motion.div
+                          className="pl-6 flex justify-start"
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 2.0, duration: 0.3 }}
+                        >
+                          <span className={cardColors.key}>learning</span>
+                          <span className={cardColors.operator}>:</span>{" "}
+                          <span className={cardColors.value}>'Always'</span>
+                        </motion.div>
+                        <div className="flex justify-start">
+                          <span className={cardColors.curly}>{"}"}</span>
+                          <span className={cardColors.operator}>;</span>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </div>
             </motion.div>
+
+            
           </div>
 
-          {/* Desktop Layout - Split  */}
-          <div className="hidden lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
-            {/* Left Column - Content  */}
+
+          {/* Desktop Layout - Split */}
+          <div className="hidden lg:grid lg:grid-cols-2 lg:gap-36 lg:items-center">
+            {/* Left Column - Content */}
             <motion.div
               initial="hidden"
               animate="visible"
               variants={containerVariants}
-              className='text-left'
+              className="text-left"
             >
               <motion.div
                 variants={textVariants}
@@ -270,20 +347,17 @@ const HeroSection = () => {
 
               <motion.h1
                 variants={itemVariants}
-                className='text-5xl xl:text-7xl font-light mb-8 leading-tight'
+                className="text-5xl xl:text-7xl font-light mb-8 leading-tight"
               >
                 <span
-                  className={`${isDarkMode ? "text-white" : "text-gray-900"}`}>
+                  className={`${isDarkMode ? "text-white" : "text-gray-900"}`}
+                >
                   Building digital
                 </span>
                 <br />
-                <span
-                  className="text-blue-500 font-medium">
-                  experiences
-                </span>
+                <span className="text-blue-500 font-medium">experiences</span>
                 <br />
-                <span
-                  className={isDarkMode ? "text-white" : "text-gray-900"}>
+                <span className={isDarkMode ? "text-white" : "text-gray-900"}>
                   that matter
                 </span>
               </motion.h1>
@@ -293,19 +367,17 @@ const HeroSection = () => {
                 className={`text-xl ${isDarkMode ? "text-gray-400" : "text-gray-600"
                   } mb-12 font-light leading-relaxed max-w-lg`}
               >
-                I craft beautiful, functional web applications with modern technologies and thoughtful user experiences.
+                I craft beautiful, functional web applications with modern
+                technologies and thoughtful user experiences.
               </motion.p>
 
-              {/* CTA Buttons - Desktop  */}
-              <motion.div
-                variants={itemVariants}
-                className='flex gap-6 mb-8'
-              >
+              {/* CTA Buttons - Desktop */}
+              <motion.div variants={itemVariants} className="flex gap-6 mb-8">
                 <motion.button
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => scrollToSection("work")}
-                  className='bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300'
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300 inline-block text-center cursor-pointer"
                 >
                   View Work
                 </motion.button>
@@ -316,17 +388,26 @@ const HeroSection = () => {
                   className={`border ${isDarkMode
                     ? "border-gray-700 hover:border-gray-600 text-gray-300"
                     : "border-gray-300 hover:border-gray-400 text-gray-700"
-                    } px-8 py-4 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300`}
+                    } px-8 py-4 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300 inline-block text-center cursor-pointer`}
                 >
                   Get in Touch
                 </motion.button>
-
+                <motion.a
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300 inline-block text-center"
+                >
+                  VIEW RESUME
+                </motion.a>
               </motion.div>
 
-              {/* Social Links - Desktop  */}
+              {/* Social Links - Desktop */}
               <motion.div
                 variants={itemVariants}
-                className='flex space-x-6 mb-12'
+                className="flex space-x-6 mb-12"
               >
                 {[
                   { icon: FiGithub, href: "https://github.com/kittu0699" },
@@ -350,70 +431,191 @@ const HeroSection = () => {
               </motion.div>
             </motion.div>
 
-            {/* Right Column - Profile Image  */}
+            {/* Right Column */}
             <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={imageVariants}
-              className='flex justify-center lg:justify-end'
+              className="w-full max-w-md px-4 sm:px-0"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.8,
+                delay: 1.2,
+                type: "spring",
+                stiffness: 100,
+              }}
             >
               <div className="relative">
-                {/* Tech Stack - Desktop  */}
+                {/* Animated Gradient Background */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-blue-400/25 via-blue-900 to-blue-400/10 rounded-2xl"
+                  animate={{ rotate: [0, 6, 0] }}
+                  transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "easeInOut",
+                  }}
+                />
+
+                {/* Tech Stack - Desktop Only */}
                 <motion.div
                   variants={itemVariants}
-                  className='flex items-center space-x-8 text-xs uppercase tracking-widest absolute -top-16 -left-38'
+                  className="hidden sm:flex items-center space-x-4 text-[10px] sm:text-xs uppercase tracking-widest absolute -top-16 left-1/2 -translate-x-1/2 "
                 >
                   <span
-                    className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
+                    className={isDarkMode ? "text-gray-600" : "text-gray-500"}
+                  >
                     React
                   </span>
                   <span
-                    className={isDarkMode ? "text-gray-700" : "text-gray-400"}>
+                    className={isDarkMode ? "text-gray-700" : "text-gray-400"}
+                  >
                     .
                   </span>
                   <span
-                    className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
+                    className={isDarkMode ? "text-gray-600" : "text-gray-500"}
+                  >
                     Node.js
                   </span>
                   <span
-                    className={isDarkMode ? "text-gray-700" : "text-gray-400"}>
+                    className={isDarkMode ? "text-gray-700" : "text-gray-400"}
+                  >
                     .
                   </span>
                   <span
-                    className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
+                    className={isDarkMode ? "text-gray-600" : "text-gray-500"}
+                  >
                     Express.js
                   </span>
                   <span
-                    className={isDarkMode ? "text-gray-700" : "text-gray-400"}>
+                    className={isDarkMode ? "text-gray-700" : "text-gray-400"}
+                  >
                     .
                   </span>
                   <span
-                    className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
+                    className={isDarkMode ? "text-gray-600" : "text-gray-500"}
+                  >
                     MongoDB
                   </span>
                   <span
-                    className={isDarkMode ? "text-gray-700" : "text-gray-400"}>
+                    className={isDarkMode ? "text-gray-700" : "text-gray-400"}
+                  >
                     .
                   </span>
                   <span
-                    className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
+                    className={isDarkMode ? "text-gray-600" : "text-gray-500"}
+                  >
                     MySQL
                   </span>
                 </motion.div>
 
+                {/* Developer Card */}
                 <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className={`w-80 h-96 rounded-3xl overflow-hidden border-4 ${isDarkMode ? "border-gray-800" : "border-gray-300"
-                    } shadow-2xl`}
+                  className={`relative ${cardColors.bg} border ${cardColors.border} p-4 sm:p-6 rounded-2xl shadow-sm z-10 `}
+                  role="region"
+                  aria-label="Developer code card"
+                  whileHover={{
+                    y: -5,
+                    boxShadow: isDarkMode ? "0 10px 25px -5px rgba(0, 0, 0, 0.3)" : "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
+                  }}
+                  transition={{ duration: 0.2 }}
                 >
-                  <img
-                    src={PROFILE_PIC}
-                    alt='Profile'
-                    className='w-full h-full object-cover '
-                  />
+                  <div className="flex justify-between items-center mb-6">
+                    <div className="flex space-x-2">
+                      <motion.div
+                        className="w-3 h-3 rounded-full bg-red-500"
+                        whileHover={{ scale: 1.2 }}
+                      />
+                      <motion.div
+                        className="w-3 h-3 rounded-full bg-yellow-500"
+                        whileHover={{ scale: 1.2 }}
+                      />
+                      <motion.div
+                        className="w-3 h-3 rounded-full bg-green-500"
+                        whileHover={{ scale: 1.2 }}
+                      />
+                    </div>
+                    <div className="text-xs text-gray-500">developer.js</div>
+                  </div>
+
+                  {/* Code Lines */}
+                  <div className="space-y-2 font-mono text-[10px] sm:text-sm ">
+                    <div className={cardColors.text}>// Software Developer</div>
+                    <div>
+                      <span className={cardColors.const}>const</span>{" "}
+                      <span className={cardColors.developer}>developer</span>{" "}
+                      <span className={cardColors.operator}>=</span>{" "}
+                      <span className={cardColors.curly}>{"{"}</span>
+                    </div>
+
+                    <motion.div
+                      className="pl-6"
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 1.4, duration: 0.3 }}
+                    >
+                      <span className={cardColors.key}>name</span>
+                      <span className={cardColors.operator}>:</span>{" "}
+                      <span className={cardColors.value}>'Kishan Mishra'</span>
+                      <span className={cardColors.operator}>,</span>
+                    </motion.div>
+
+                    <motion.div
+                      className="pl-6 flex justify-start flex-wrap"
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 1.6, duration: 0.3 }}
+                    >
+                      <span className={cardColors.key}>skills</span>
+                      <span className={cardColors.operator}>:</span>{" "}
+                      <span className={cardColors.curly}>[</span>
+                      <span className={cardColors.value}>'JavaScript'</span>
+                      <span className={cardColors.operator}>,</span>{" "}
+                      <span className={cardColors.value}>'React.js'</span>
+                      <span className={cardColors.operator}>,</span>{" "}
+                      <span className={cardColors.value}>'Node.js'</span>
+                      <span className={cardColors.operator}>,</span> <br />{" "}
+                      <span className={`${cardColors.value} ml-16`}>'Express.js'</span>
+                      <span className={cardColors.operator}>,</span>{" "}
+                      <span className={cardColors.value}>'MongoDB'</span>
+                      <span className={cardColors.operator}>,</span>{" "}
+                      <span className={cardColors.value}>'MySQL'</span>
+                      <span className={cardColors.curly}>]</span>
+                      <span className={cardColors.operator}>,</span>
+                    </motion.div>
+
+                    <motion.div
+                      className="pl-6"
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 1.8, duration: 0.3 }}
+                    >
+                      <span className={cardColors.key}>focuses</span>
+                      <span className={cardColors.operator}>:</span>{" "}
+                      <span className={cardColors.curly}>[</span>
+                      <span className={cardColors.value}>'Full-Stack'</span>
+                      <span className={cardColors.curly}>]</span>
+                      <span className={cardColors.operator}>,</span>
+                    </motion.div>
+
+                    <motion.div
+                      className="pl-6"
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 2.0, duration: 0.3 }}
+                    >
+                      <span className={cardColors.key}>learning</span>
+                      <span className={cardColors.operator}>:</span>{" "}
+                      <span className={cardColors.value}>'Always'</span>
+                    </motion.div>
+
+                    <div>
+                      <span className={cardColors.curly}>{"}"}</span>
+                      <span className={cardColors.operator}>;</span>
+                    </div>
+                  </div>
                 </motion.div>
 
-                {/* Decorative elements  */}
+                {/* Decorative Borders */}
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{
@@ -421,7 +623,7 @@ const HeroSection = () => {
                     repeat: Infinity,
                     ease: "linear",
                   }}
-                  className='absolute -inset-4 rounded-3xl border border-blue-500/20'
+                  className="absolute -inset-4 rounded-3xl border border-blue-500/20"
                 >
                   <motion.div
                     animate={{ rotate: -360 }}
@@ -430,29 +632,26 @@ const HeroSection = () => {
                       repeat: Infinity,
                       ease: "linear",
                     }}
-                    className='absolute -inset-8 rounded-3xl border border-purple-500/10'
-                  ></motion.div>
+                    className="absolute -inset-8 rounded-3xl border border-purple-500/10"
+                  />
                 </motion.div>
               </div>
             </motion.div>
-
           </div>
         </div>
 
-        {/* Scroll Indicator  */}
+        {/* Scroll Indicator */}
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className='absolute bottom-8 left-1/2 transform -translate-x-1/2'
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
           <ArrowDown
             size={20}
             className={isDarkMode ? "text-gray-600" : "text-gray-400"}
           />
         </motion.div>
-
       </motion.section>
-
     </div>
   );
 };

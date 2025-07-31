@@ -55,11 +55,19 @@ const ContactSection = () => {
     setTimeout(() => setShowSuccess(false), 3000)
   };
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setIsMenuOpen(false);
+    }
+  };
+
   return (
     <section
       id='contact'
       ref={sectionRef}
-      className={`py-24 px-6 ${isDarkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"
+      className={`py-24 px-6 ${isDarkMode ? "bg-gray-950 text-white" : "bg-gray-50 text-gray-900"
         } relative overflow-hidden`}
     >
       {/* Background Element  */}
@@ -150,7 +158,7 @@ const ContactSection = () => {
                   disabled={isSubmitting}
                   whileHover={{ y: -2, scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className='w-full bg-blue-500 hover:bg-blue-600 disabled:bg-blue-400 text-white py-4 rounded-xl text-sm uppercase tracking-wider font-medium transition-all duration-300 flex items-center justify-center space-x-2'
+                  className='w-full bg-blue-500 hover:bg-blue-600 disabled:bg-blue-400 text-white py-4 rounded-xl text-sm uppercase tracking-wider font-medium transition-all duration-300 flex items-center justify-center space-x-2 cursor-pointer'
                   onClick={handleSubmit}
                 >
                   {isSubmitting ? (
@@ -295,7 +303,8 @@ const ContactSection = () => {
                   <motion.button
                     whileHover={{ y: -2, scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
-                    className={`px-6 py-3 rounded-full border font-medium transition-all duration-300 ${
+                    onClick={() => scrollToSection("contact") }
+                    className={`px-6 py-3 rounded-full border font-medium transition-all duration-300 cursor-pointer ${
                       isDarkMode
                         ? "border-gray-600 hover:border-blue-500 hover:text-blue-400"
                         : "border-gray-300 hover:border-blue-500 hover:text-blue-600"
