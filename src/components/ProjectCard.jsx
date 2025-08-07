@@ -115,7 +115,7 @@ const ProjectCard = ({ project, index, isDarkMode }) => {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className='border-2 border-blue-500 text-white hover:bg-blue-500 hover:text-white px-4 py-2 rounded-full flex items-center space-x-2 text-sm font-medium transition-all'
+              className='border-2 border-blue-400 text-blue-400 hover:bg-blue-500 hover:text-white px-4 py-2 rounded-full flex items-center space-x-2 text-sm font-medium transition-all'
             >
               <FiGithub size={16} />
               <span>GitHub</span>
