@@ -33,8 +33,8 @@ const ProjectCard = ({ project, index, isDarkMode }) => {
     >
       <div
         className={`rounded-2xl overflow-hidden border transition-all duration-500 ${isDarkMode
-            ? "bg-gray-900/50 border-gray-800 hover:border-gray-700 hover:shadow-2xl hover:shadow-blue-500/10"
-            : "bg-white/80 border-gray-200 hover:border-gray-300 hover:shadow-2xl hover:shadow-blue-500/10"
+          ? "bg-gray-900/50 border-gray-800 hover:border-gray-700 hover:shadow-2xl hover:shadow-blue-500/10"
+          : "bg-white/80 border-gray-200 hover:border-gray-300 hover:shadow-2xl hover:shadow-blue-500/10"
           } backdrop-blur-sm`}
       >
 
@@ -59,8 +59,8 @@ const ProjectCard = ({ project, index, isDarkMode }) => {
           <div className="absolute top-4 right-4">
             <span
               className={`text-xs px-3 py-1 rounded-full font-medium ${isDarkMode
-                  ? "bg-gray-800/80 text-gray-300"
-                  : "bg-white/80 text-gray-700"
+                ? "bg-gray-800/80 text-gray-300"
+                : "bg-white/80 text-gray-700"
                 } backdrop-blur-sm`}>
               {project.category}
             </span>
@@ -76,6 +76,8 @@ const ProjectCard = ({ project, index, isDarkMode }) => {
             >
               <motion.a
                 href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className='bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex items-center space-x-2 text-sm font-medium transition-colors'
                 initial={{ y: 20, opacity: 0.5 }}
                 whileHover={{ y: 10, opacity: 1, scale: 1.05 }}
@@ -106,6 +108,8 @@ const ProjectCard = ({ project, index, isDarkMode }) => {
           <div className="flex justify-center gap-8 p-4">
             <a
               href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className='bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex items-center space-x-2 text-sm font-medium transition-colors'
             >
               <ExternalLink size={16} />
@@ -136,8 +140,8 @@ const ProjectCard = ({ project, index, isDarkMode }) => {
               <span
                 key={tagIndex}
                 className={`text-xs px-3 py-1 rounded-full ${isDarkMode
-                    ? "bg-gray-800 text-gray-300"
-                    : "bg-gray-100 text-gray-700"
+                  ? "bg-gray-800 text-gray-300"
+                  : "bg-gray-100 text-gray-700"
                   }`}>
                 {tag}
               </span>
