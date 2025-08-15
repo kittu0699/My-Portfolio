@@ -6,7 +6,7 @@ import {
   BookOpen,
   Database,
   Server,
-  Cloud,
+  ToolCase,
   Mail,
   MapPin,
   Phone,
@@ -18,7 +18,6 @@ import PROJECT_IMG_1 from "../assets/images/ems.jpg";
 import PROJECT_IMG_2 from "../assets/images/weather.jpg";
 import PROJECT_IMG_3 from "../assets/images/login.jpg";
 import PROJECT_IMG_4 from "../assets/images/todo.jpg";
-// import { color, number } from "framer-motion";
 
 export const SKILLS_CATEGORY = [
   {
@@ -56,12 +55,14 @@ export const SKILLS_CATEGORY = [
   },
 
   {
-    title: "DevOps",
-    icon: Cloud,
-    description: "Deploying and scaling applications",
+    title: "Developer Tools",
+    icon: ToolCase,
+    description: "Tools for coding, testing, and version control",
     skills: [
-      { name: "Git", level: 80, color: "bg-orange-700" },
-      // { name: "Postman", level: 85, color: "bg-purple-600" },
+      { name: "VS Code", level: 90, color: "bg-orange-700" },
+      { name: "Postman", level: 70, color: "bg-purple-600" },
+      { name: "Git", level: 75, color: "bg-green-600" },
+      { name: "GitHub", level: 80, color: "bg-blue-700" },
     ],
   },
 ];
@@ -101,7 +102,7 @@ export const PROJECTS = [
     ],
     liveUrl: "https://expense-management-system-ui.onrender.com",
     githubUrl: "https://github.com/kittu0699/Expense-Management-System",
-    featured: false,
+    featured: true,
     category: "Web Application",
   },
   {
