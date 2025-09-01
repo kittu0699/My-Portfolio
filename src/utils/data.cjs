@@ -15,9 +15,11 @@ import {
 import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 
 import PROJECT_IMG_1 from "../assets/images/ems.jpg";
-import PROJECT_IMG_2 from "../assets/images/weather.jpg";
-import PROJECT_IMG_3 from "../assets/images/login.jpg";
-import PROJECT_IMG_4 from "../assets/images/todo.jpg";
+import PROJECT_IMG_2 from "../assets/images/food.jpg";
+import PROJECT_IMG_3 from "../assets/images/weather.jpg";
+import PROJECT_IMG_4 from "../assets/images/login.jpg";
+import PROJECT_IMG_5 from "../assets/images/todo.jpg";
+
 
 export const SKILLS_CATEGORY = [
   {
@@ -105,12 +107,24 @@ export const PROJECTS = [
     featured: true,
     category: "Web Application",
   },
-  {
+   {
     id: 2,
+    title: "FOOD DELIVERY",
+    description:
+      "Developed a dynamic Food Delivery web application using React.js for food order and CSS for responsive UI design.",
+    image: PROJECT_IMG_2,
+    tags: ["React", "CSS"],
+    liveUrl: "https://food-delivery-flax-one.vercel.app/",
+    githubUrl: "https://github.com/kittu0699/Food-Delivery",
+    featured: true,
+    category: "Web Application",
+  },
+  {
+    id: 3,
     title: "Weather App",
     description:
       "Developed a Weather App using React JS. Here we will get the current Weather data from OpenWeatherMap API and display the weather data like Temperature,  Weather condition, Humidity and Wind Speed according to the city.",
-    image: PROJECT_IMG_2,
+    image: PROJECT_IMG_3,
     tags: ["React", "CSS", "Open Source API"],
     liveUrl: "https://weather-app-nine-navy-43.vercel.app/",
     githubUrl: "https://github.com/kittu0699/weather-app",
@@ -118,11 +132,11 @@ export const PROJECTS = [
     category: "Web Application",
   },
   {
-    id: 3,
+    id: 4,
     title: "Login Form",
     description:
       "Developed a full-stack login system using React.js, Node.js & Express.js, and MySQL.",
-    image: PROJECT_IMG_3,
+    image: PROJECT_IMG_4,
     tags: ["React", "CSS", "Node.js", "Express.js", "MySQL"],
     liveUrl: "#",
     githubUrl: "https://github.com/kittu0699/Login-Form",
@@ -130,17 +144,18 @@ export const PROJECTS = [
     category: "Web Application",
   },
   {
-    id: 4,
+    id: 5,
     title: "TO-DO List",
     description:
       "Developed a dynamic To-Do List web application using React.js for state management and CSS for responsive UI design.",
-    image: PROJECT_IMG_4,
+    image: PROJECT_IMG_5,
     tags: ["React", "CSS"],
     liveUrl: "https://to-do-list-five-weld-88.vercel.app/",
     githubUrl: "https://github.com/kittu0699/TO-DO-LIST",
     featured: true,
     category: "Web Application",
   },
+ 
 ];
 
 export const JOURNEY_STEPS = [
