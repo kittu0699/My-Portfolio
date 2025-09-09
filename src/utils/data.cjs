@@ -25,7 +25,6 @@ import CERTIFICATE_IMG_1 from "../assets/images/MERN.jpg";
 import CERTIFICATE_IMG_2 from "../assets/images/Hack2skill-Certificate.png";
 import CERTIFICATE_IMG_3 from "../assets/images/Job-deloitee.jpg";
 import CERTIFICATE_IMG_4 from "../assets/images/SQL-Bootcamp.jpg";
-import CERTIFICATE_IMG_5 from "../assets/images/GEN-AI.jpg";
 
 
 
@@ -216,15 +215,6 @@ export const CERTIFICATES = [
     description:
       "Completed a SQL Bootcamp, gaining hands-on experience in database management and SQL querying.",
   },
-  {
-    id: 5,
-    title: "Introduction to Generative AI powered by Google Cloud",
-    issuer: "Simplilearn SkillUp",
-    image: CERTIFICATE_IMG_5,
-    credentialUrl: "https://drive.google.com/file/d/1oeEv9k2Iga2xNfR31fNlvM4Yquk8rVE9/view?usp=sharing",
-    description:
-      "Completed a course on Generative AI, focusing on its applications and implications in various fields.",
-  },
 ];
 
 
