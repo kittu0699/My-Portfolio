@@ -184,7 +184,7 @@ export const CERTIFICATES = [
     title: "Full Stack Web Development in MERN",
     issuer: "Rays Edutech PVT Ltd.",
     image: CERTIFICATE_IMG_1,
-    credentialUrl: "https://drive.google.com/file/d/1I3GvGs9Ot2nCGr7zRGQ_Da4bFFwi2S8T/view?usp=sharing",
+    credentialUrl: "https://drive.google.com/file/d/1TIFAJSoSgauz8BOfEO_SuxP2jWWiPh0Q/view?usp=sharing",
     description:
       "Completed a comprehensive Full Stack Web Development course covering HTML, CSS, JavaScript, React, Node.js, Express.js, MongoDB and MySQL.",
   },
